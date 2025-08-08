@@ -1,0 +1,100 @@
+:root{
+  --bg: #0f1724;
+  --card: #0b1220;
+  --muted: #aab3c2;
+  --accent: #6ee7b7;
+  --glass: rgba(255,255,255,0.04);
+  --max-width: 1100px;
+  color-scheme: dark;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background: linear-gradient(180deg,#071024 0%, #071a2d 100%);
+  color:#e6eef8;
+  line-height:1.5;
+}
+
+.container{max-width:var(--max-width);margin:0 auto;padding:2rem}
+
+.site-header{backdrop-filter:blur(6px);position:sticky;top:0;z-index:50;background:linear-gradient(180deg, rgba(2,6,23,0.6), rgba(2,6,23,0.2));border-bottom:1px solid rgba(255,255,255,0.03)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:1rem}
+.brand h1{margin:0;font-size:1.15rem;letter-spacing:0.3px}
+.brand h1 span{font-weight:700}
+.muted{color:var(--muted)}
+
+.nav a{color:var(--muted);text-decoration:none;margin:0 .6rem;padding:.35rem .5rem;border-radius:6px;font-weight:500}
+.nav a:hover{color:#fff;background:rgba(255,255,255,0.03)}
+.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.03);padding:.45rem .6rem;border-radius:8px;color:var(--muted);cursor:pointer}
+
+.hero{padding:4rem 0}
+.hero-grid{display:grid;grid-template-columns:1fr 320px;gap:2rem;align-items:start}
+.hero-text h2{font-size:2rem;margin:.2rem 0}
+.lead{color:var(--muted);margin:1rem 0 1.25rem}
+.cta-row .btn{background:var(--accent);color:#042223;padding:.6rem 1rem;border-radius:8px;text-decoration:none;margin-right:.6rem}
+.btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:.55rem .9rem;border-radius:8px;color:var(--muted);text-decoration:none}
+.hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:1rem;align-self:start;border:1px solid rgba(255,255,255,0.03)}
+.card-inner h3{margin-top:0}
+.card-link{display:inline-block;margin-top:.6rem;color:var(--accent);text-decoration:none}
+
+.section{padding:3rem 0}
+.section-title{margin:0 0 1rem;font-size:1.25rem}
+
+.about-grid{display:grid;grid-template-columns:1fr 320px;gap:1.5rem}
+.skill-summary ul{list-style:none;padding:0;margin:0}
+.skill-summary li{margin:.4rem 0;color:var(--muted)}
+
+.alt{background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent);border-top:1px solid rgba(255,255,255,0.02);}
+
+.skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.skill{background:var(--glass);padding:1rem;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.project-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:1rem;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+.project-links a{color:var(--accent);text-decoration:none;font-weight:600}
+
+.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.edu-item{background:var(--glass);padding:1rem;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+
+.contact-grid{display:grid;grid-template-columns:1fr 420px;gap:1.5rem}
+.contact-list{list-style:none;padding:0;margin:0}
+.contact-list li{margin:.5rem 0;color:var(--muted)}
+.contact-form label{display:block;margin:.6rem 0}
+.contact-form input, .contact-form textarea{
+  width:100%;padding:.6rem;border-radius:8px;border:1px solid rgba(255,255,255,0.06);
+  background:transparent;color:inherit;
+}
+.form-actions{display:flex;gap:.6rem;margin-top:.6rem}
+.small{font-size:.85rem}
+
+.site-footer{padding:1.2rem 0;text-align:center;color:var(--muted);border-top:1px solid rgba(255,255,255,0.02);margin-top:2rem}
+
+/* Profile Photo Styling */
+.photo-wrapper {
+  margin-bottom: 1.2rem;
+  display: flex;
+  justify-content: center;
+}
+.profile-photo {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--accent);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease;
+}
+.profile-photo:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width:900px){
+  .hero-grid,.about-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .nav{display:none}
+  .header-inner{justify-content:space-between}
+}
